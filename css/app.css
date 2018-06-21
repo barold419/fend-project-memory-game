@@ -79,6 +79,68 @@ h1 {
     cursor: default;
     background: #02ccba;
     font-size: 33px;
+    /*transform: skewY(30deg) scale(1.5, 0.0);*/
+    animation: squeezes 0.6s;
+    animation-iteration-count: 2;
+    /*transition: width 1s ease-in-out;*/
+}
+
+.deck .card.nomatch {
+    cursor: default;
+    animation: shake 0.5s;
+    animation-iteration-count: 3;
+    background: crimson;
+}
+
+@keyframes squeezes {
+    0% {
+        transform: scale(0.75, 1.1);
+    }
+    33% {
+        transform: scale(0.5, 1.2);
+    }
+    66% {
+        transform: scale(0.75, 1.1);
+    }
+    100% {
+        transform: scale(1.0, 1.0);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px);
+    }
+    10% {
+        transform: translate(-1px, -2px);
+    }
+    20% {
+        transform: translate(-3px, 0px);
+    }
+    30% {
+        transform: translate(3px, 2px);
+    }
+    40% {
+        transform: translate(1px, -1px);
+    }
+    50% {
+        transform: translate(-1px, 2px);
+    }
+    60% {
+        transform: translate(-3px, 1px);
+    }
+    70% {
+        transform: translate(3px, 1px);
+    }
+    80% {
+        transform: translate(-1px, -1px);
+    }
+    90% {
+        transform: translate(1px, 2px);
+    }
+    100% {
+        transform: translate(1px, -2px);
+    }
 }
 
 /*
@@ -106,4 +168,65 @@ h1 {
 .score-panel .restart {
     float: right;
     cursor: pointer;
+}
+
+.timer_container {
+    float: left;
+    width: 35%;
+}
+
+.stars_container {
+    float: left;
+    width: 20%;
+}
+
+.moves_container {
+    float: left;
+}
+
+.hide {
+    display: none;
+}
+
+#popup {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white; /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+
+.winIcon {
+    font-size: 6em;
+    color: darkgreen;
+}
+
+.winMessage {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.popupButton {
+    width: 120px;
+    height: 30px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgreen;
+    color: white;
+}
+
+.separator {
+    height: 25px;
 }
